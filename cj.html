@@ -4,43 +4,72 @@
         <style type="text/css">
             
         </style>
-        <script type="text/javascript" src=""></script>
+        <script type="text/javascript" src="">
+            var count1 = 0; // right
+            var count2 = 0; // wrong
+            var count3 = 0.0; // complete rate
+            var k1 = '';
+            var k2 = '';
+            var k3 = '';
+            var k4 = '';
+
+            var o1 = document.getElementById('o1');
+            var o2 = document.getElementById('o2');
+            var o3 = document.getElementById('o3');
+            var o4 = document.getElementById('o4');
+
+            var r1 = document.getElementById('r1');
+            var r2 = document.getElementById('r2');
+            var r3 = document.getElementById('r3');
+
+            function reset() {
+                count1 = count2 = 0;
+                count3 = 0.0;
+                k1 = '';
+                k2 = '';
+                k3 = '';
+                k4 = '';
+                update();
+            }
+            function update() {
+            }
+        </script>
     </head>
     <table>
         <tr>
             <td>正確</td>
             <td>錯誤</td>
             <td>完成</td>
-            <td rowspan=2><input type=button name=reset value=reset></td>
+            <td rowspan=2><input type=button name=reset value=reset onclick=reset()></td>
         </tr>
         <tr>
-            <td><div id=count_right>0</div></td>
-            <td><div id=count_wrong>0</div></td>
-            <td><div id=percent_complete>0.0%</div></td>
+            <td><div id=r1>0</div></td>
+            <td><div id=r2>0</div></td>
+            <td><div id=r3>0.0%</div></td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
+            <td id=o1>1</td>
+            <td id=o2>2</td>
+            <td id=o3>3</td>
+            <td id=o4>4</td>
         </tr>
         <tr>
             <td colspan=4>
                 <div id=img>
-                    <iframe width=400 height=400 src=s2/a01.svg></iframe>
+                    <img id=svg width=400 height=400 src=s2/a01.svg></img>
                 </div>
             </td>
         </tr>
             <td><div id=left_up></div>1</td>
-            <td><div id=left_up_value></div></td>
-            <td><div id=right_up_value></div></td>
+            <td><div id=o1></div></td>
+            <td><div id=o3></div></td>
             <td><div id=right_up></div>3</td>
         <tr>
         </tr>
         <tr>
             <td><div id=left_down></div>2</td>
-            <td><div id=left_down_value></div></td>
-            <td><div id=right_up_value></div></td>
+            <td><div id=o2></div></td>
+            <td><div id=o4></div></td>
             <td><div id=right_down></div>4</td>
         </tr>
     </table>
