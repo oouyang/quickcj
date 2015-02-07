@@ -2,9 +2,11 @@
     <head>
         <title></title>
         <style type="text/css">
-            
         </style>
+        <script type="text/javascript" src="cj.js">
+        </script>
         <script type="text/javascript" src="">
+            var stat = Array()
             var count1 = 0; // right
             var count2 = 0; // wrong
             var count3 = 0.0; // complete rate
@@ -21,7 +23,10 @@
             var r1 = document.getElementById('r1');
             var r2 = document.getElementById('r2');
             var r3 = document.getElementById('r3');
+            var word = document.getElementById('svg');
 
+            var index = 0;
+            var key = 'a';
             function reset() {
                 count1 = count2 = 0;
                 count3 = 0.0;
@@ -30,11 +35,37 @@
                 k3 = '';
                 k4 = '';
                 update();
+                for (var i = 0; i < ws.length; i++) {
+                    stat[i] = 0;
+                }
+                updateWord();
+            }
+            function updateWord() {
+                word.src = ws[index];
+                key = ws[index].substring(3,1);
+                var keys = ['a','b','c','d','e','f',
+                        'g','h','i','j','k','l',
+                        'm','n','o','p','q','r','s',
+                        't','u','v','w','x','y','z'];
+                keys.sort(function (){return 0.5 - Math.random();});
+                mykeys = keys.slice(0,3);
+                mykeys.push(key);
+                mykeys.sort(function () {return 0.5 - Math.random();});
+                var values = [  '日[A]','月[B]','金[C]','木[D]','水[E]','火[F]','土[G]','竹[H]',
+                                '戈[I]','十[J]','大[K]','中[L]','一[M]','弓[N]','口[R]','尸[S]',
+                                '廿[T]','山[U]','女[V]','田[W]','難[X]','卜[Y]','重[Z]'];
+                
+            }
+            function newWord() {
+                index = Math.random()*ws.length;
+                updateWord()
             }
             function update() {
             }
         </script>
     </head>
+    <body>
+        <h1>倉頡練習</h1>
     <table>
         <tr>
             <td>正確</td>
@@ -73,4 +104,5 @@
             <td><div id=right_down></div>4</td>
         </tr>
     </table>
+    </body>
 </html>
