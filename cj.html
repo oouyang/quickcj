@@ -27,6 +27,13 @@
 
             var index = 0;
             var key = 'a';
+
+            var values = {  'a' : '日[A]','b' : '月[B]','c' : '金[C]','d' : '木[D]',
+                            'e' : '水[E]','f' : '火[F]','g' : '土[G]','h' : '竹[H]',
+                            'i' : '戈[I]','j' : '十[J]','k' : '大[K]','l' : '中[L]',
+                            'm' : '一[M]','n' : '弓[N]','r' : '口[R]','s' : '尸[S]',
+                            't' : '廿[T]','u' : '山[U]','v' : '女[V]','w' : '田[W]',
+                            'x' : '難[X]','y' : '卜[Y]','z' : '重[Z]'};
             function reset() {
                 count1 = count2 = 0;
                 count3 = 0.0;
@@ -48,19 +55,36 @@
                         'm','n','o','p','q','r','s',
                         't','u','v','w','x','y','z'];
                 keys.sort(function (){return 0.5 - Math.random();});
-                mykeys = keys.slice(0,3);
-                mykeys.push(key);
+                mykeys = keys.slice(0,3); // get random 3 letters
+                mykeys.push(key); // put anwser in the same array
                 mykeys.sort(function () {return 0.5 - Math.random();});
-                var values = [  '日[A]','月[B]','金[C]','木[D]','水[E]','火[F]','土[G]','竹[H]',
-                                '戈[I]','十[J]','大[K]','中[L]','一[M]','弓[N]','口[R]','尸[S]',
-                                '廿[T]','山[U]','女[V]','田[W]','難[X]','卜[Y]','重[Z]'];
-                
+                k1 = mykeys[0];
+                k2 = mykeys[1];
+                k3 = mykeys[2];
+                k4 = mykeys[3];
             }
             function newWord() {
                 index = Math.random()*ws.length;
-                updateWord()
+                updateWord();
             }
             function update() {
+            }
+            var k_a = 65;
+            var k_z = 90;
+            var k_m = 77;
+            var k_n = 78;
+            window.onkeyup = function(e) {
+               var k = e.keyCode ? e.keyCode : e.which;
+            
+               if (k == k_a) {
+                   anwser = 1;
+               }else if (k == k_z) {
+                   anwser = 2;
+               }else if (k == k_m) {
+                   anwser = 4;
+               }else if (k == k_n) {
+                   anwser = 3;
+               }
             }
         </script>
     </head>
