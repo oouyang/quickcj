@@ -6,8 +6,11 @@
         <script type="text/javascript">
         var kr = 39;
         var kl = 37;
-        var view = document.getElementById('view');
         var index = 0;
+        var view = document.getElementById('view');
+        var prev = document.getElementById('prev');
+        var next = document.getElementById('next');
+        var stat = document.getElementById('stat');
 
         function adjustIndex() {
             if (index > ws.length) {
@@ -20,6 +23,7 @@
         function updateView() {
             adjustIndex();
             view.src = ws[index];
+            stat.innerHTML = ws[index];
         }
 
         function init() {
@@ -35,8 +39,6 @@
                 updateView();
             };
         }
-        var prev = document.getElementById('prev');
-        var next = document.getElementById('next');
         function prevView() {
             index++;
             updateView();
@@ -53,11 +55,11 @@
         <div id=img><img id=view src="s2/a01.svg"></img></div>
         <table>
             <tr>
-                <td></td>
+                <td><div id=stat></div></td>
             </tr>
             <tr>
-                <td><div id=prev></div></td>
-                <td><div id=next></div></td>
+                <td><div id=prev>prev</div></td>
+                <td><div id=next>next</div></td>
             </tr>
         </table>
     </body>
