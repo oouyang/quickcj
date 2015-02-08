@@ -35,7 +35,19 @@
         function updateView() {
             adjustIndex();
             view.src = ws[index];
-            stat.innerHTML = ws[index];
+            var chars = {
+                'a':'日[A]','b':'月[B]','c':'金[C]','d':'木[D]','e':'水[E]','f':'火[F]',
+                'g':'土[G]','h':'竹[H]','i':'戈[I]','j':'十[J]','k':'大[K]','l':'中[L]',
+                'm':'一[M]','n':'弓[N]','o':'人[O]','p':'心[P]','q':'手[Q]','r':'口[R]',
+                's':'尸[S]','t':'廿[T]','u':'山[U]','v':'女[V]','w':'田[W]','x':'難[X]',
+                'y':'卜[Y]','z':'重[Z]'
+                };
+            var ans = getAnswers(ws[index].substring(3,1));
+            var ansTxt = '';
+            for (var i = 0; i < ans.length; i++) {
+                ansTxt += ' ('+(i+1)+')' + chars[ans[i]] + ' ';
+            }
+            stat.innerHTML = ws[index] + ansTxt;
         }
         
         function shuffle() {
