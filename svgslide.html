@@ -48,11 +48,11 @@
             };
         }
         function prevView() {
-            index++;
+            index--;
             updateView();
         }
         function nextView() {
-            index--;
+            index++;
             updateView();
         }
         prev.addEventListener('click', prevView());
