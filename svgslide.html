@@ -13,11 +13,12 @@
         var stat = document.getElementById('stat');
 
         function adjustIndex() {
-            if (index > ws.length) {
-                index = index % ws.length;
+            var len = ws.length;
+            if (index >= len) {
+                index = index % len;
             }
             if (index < 0) {
-                index = ws.length - 1;
+                index = len - 1;
             }
         }
         function updateView() {
