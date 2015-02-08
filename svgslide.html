@@ -110,6 +110,8 @@
             reset();
 
             input.focus();
+            input.addEventListener('keypress', check_ans);
+
             shuffle();
             // updateView();
 
@@ -180,7 +182,7 @@
         <table>
             <tr>
                 <td colspan=3><div id=stat></div>
-                <input value="" id=input onkeypress="check_ans(window.event)" /></td>
+                <input value="" id=input /></td>
             </tr>
             <tr>
                 <td colspan=3><div id=score></div></td>
