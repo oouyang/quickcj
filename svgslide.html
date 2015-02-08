@@ -80,16 +80,35 @@
             index = Math.floor(Math.random() * ws.length);
             updateView();
         }
-
-        function init() {
+        
+        function reset() {
             kr = 39;
             kl = 37;
+            k1 = 49;
+            k2 = 50;
+            k3 = 51;
+            k4 = 52;
+            right = 0;
+            wrong = 0;
+            total = 0;
+            right_percent = 0.0;
+            percent = 0.0;
+            chars_flag = [];
             index = 0;
+            ans = [];
+            correct_ans = 0;
+        }
+
+        function init() {
             view = document.getElementById('view');
             prev = document.getElementById('prev');
             next = document.getElementById('next');
             stat = document.getElementById('stat');
+            score = document.getElementById('score');
+            input = document.getElementById('input');
             
+            reset();
+
             input.focus();
 
             updateView();
