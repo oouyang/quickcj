@@ -26,6 +26,11 @@
             view.src = ws[index];
             stat.innerHTML = ws[index];
         }
+        
+        function shuffle() {
+            index = Math.random() * ws.length;
+            updateView();
+        }
 
         function init() {
             kr = 39;
