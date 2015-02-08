@@ -7,6 +7,11 @@
         var kl = 37;
         var view = document.getElementById('view');
         var index = 0;
+
+        function updateView() {
+            view.src = ws[index];
+        }
+
         document.onkeypress = function(e) {
             e = e || window.event;
             var kc = e.keyCode;
@@ -23,9 +28,6 @@
             }
             updateView();
         };
-        function updateView() {
-            view.src = ws[index];
-        }
         </script>
     </head>
     <body onload=updateView()>
