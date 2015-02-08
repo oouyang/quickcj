@@ -35,7 +35,11 @@
             prev = document.getElementById('prev');
             next = document.getElementById('next');
             stat = document.getElementById('stat');
+
             updateView();
+
+            prev.addEventListener('click', prevView());
+            next.addEventListener('click', nextView());
             document.onkeypress = function(e) {
                 e = e || window.event;
                 var kc = e.keyCode;
@@ -55,8 +59,6 @@
             index++;
             updateView();
         }
-        prev.addEventListener('click', prevView());
-        next.addEventListener('click', nextView());
         </script>
     </head>
     <body onload="init()">
