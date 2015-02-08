@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>show svg</title>
+        <script type="text/javascript" src="cj.js">
+        var kr = 39;
+        var kl = 37;
+        var view = document.getElementById('view');
+        var index = 0;
+        document.onkeypress = function(e) {
+            e = e || window.event;
+            var kc = e.keyCode;
+            if (kc == kr) { //left
+                index ++;
+            } else if (kc == kl) {//right
+                index --;
+            }
+            if (index > ws.length) {
+                index = index % length;
+            }
+            if (index < 0) {
+                index = length - 1;
+            }
+            updateView();
+        };
+        function updateView() {
+            view.src = ws[index];
+        }
+        </script>
+    </head>
+    <body onload=updateView()>
+        <div id=img><img id=view src="about:blank"></img></div>
+    </body>
+</html>
