@@ -9,7 +9,16 @@
         var view = document.getElementById('view');
         var index = 0;
 
+        function adjustIndex() {
+            if (index > ws.length) {
+                index = index % length;
+            }
+            if (index < 0) {
+                index = length - 1;
+            }
+        }
         function updateView() {
+            adjustIndex();
             view.src = ws[index];
         }
 
@@ -23,19 +32,33 @@
                 } else if (kc == kl) {//right
                     index --;
                 }
-                if (index > ws.length) {
-                    index = index % length;
-                }
-                if (index < 0) {
-                    index = length - 1;
-                }
                 updateView();
             };
         }
-
+        var prev = document.getElementById('prev');
+        var next = document.getElementById('next');
+        function prevView() {
+            index++;
+            updateView();
+        }
+        function nextView() {
+            index--;
+            updateView();
+        }
+        prev.addEventListener('click', prevView());
+        next.addEventListener('click', nextView());
         </script>
     </head>
     <body onload="init()">
         <div id=img><img id=view src="s2/a01.svg"></img></div>
+        <table>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td><div id=prev></div></td>
+                <td><div id=next></div></td>
+            </tr>
+        </table>
     </body>
 </html>
