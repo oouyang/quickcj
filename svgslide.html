@@ -14,10 +14,10 @@
 
         function adjustIndex() {
             if (index > ws.length) {
-                index = index % length;
+                index = index % ws.length;
             }
             if (index < 0) {
-                index = length - 1;
+                index = ws.length - 1;
             }
         }
         function updateView() {
