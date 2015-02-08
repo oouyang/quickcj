@@ -24,6 +24,7 @@
         var next = document.getElementById('next');
         var stat = document.getElementById('stat');
         var score = document.getElementById('score');
+        var input = document.getElementById('input');
 
         function adjustIndex() {
             var len = ws.length;
@@ -70,6 +71,9 @@
             scoreTxt += ' 正確率:' + right_percent + '%';
             scoreTxt += ' 完成率:' + percent + '%';
             score.innerHTML = scoreTxt;
+            
+            input.textContent = '';
+            input.focus();
         }
         
         function shuffle() {
@@ -85,6 +89,8 @@
             prev = document.getElementById('prev');
             next = document.getElementById('next');
             stat = document.getElementById('stat');
+            
+            input.focus();
 
             updateView();
 
