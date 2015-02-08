@@ -42,7 +42,7 @@
                 's':'尸[S]','t':'廿[T]','u':'山[U]','v':'女[V]','w':'田[W]','x':'難[X]',
                 'y':'卜[Y]','z':'重[Z]'
                 };
-            var ans = getAnswers(ws[index].substring(3,1));
+            var ans = getAnswers(ws[index].charAt(3));
             var ansTxt = '';
             for (var i = 0; i < ans.length; i++) {
                 ansTxt += ' ('+(i+1)+')' + chars[ans[i]] + ' ';
