@@ -117,7 +117,7 @@
             next.addEventListener('click', nextView());
             document.onkeypress = function(e) {
                 e = e || window.event;
-                var kc = e.keyCode;
+                var kc = event.keyCode;
                 if (kc == kr) { //left
                     index ++;
                 } else if (kc == kl) {//right
@@ -175,10 +175,12 @@
         </script>
     </head>
     <body onload="init()">
+        <h1>倉頡練習</h1>
         <div id=img><img id=view src="s2/a01.svg"></img></div>
         <table>
             <tr>
-                <td colspan=3><div id=stat></div><input value="" id=input onkeypress="check_ans()" /></td>
+                <td colspan=3><div id=stat></div>
+                <input value="" id=input onkeypress="check_ans(window.event)" /></td>
             </tr>
             <tr>
                 <td colspan=3><div id=score></div></td>
