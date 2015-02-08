@@ -12,25 +12,29 @@
             view.src = ws[index];
         }
 
-        document.onkeypress = function(e) {
-            e = e || window.event;
-            var kc = e.keyCode;
-            if (kc == kr) { //left
-                index ++;
-            } else if (kc == kl) {//right
-                index --;
-            }
-            if (index > ws.length) {
-                index = index % length;
-            }
-            if (index < 0) {
-                index = length - 1;
-            }
+        function init() {
             updateView();
-        };
+            document.onkeypress = function(e) {
+                e = e || window.event;
+                var kc = e.keyCode;
+                if (kc == kr) { //left
+                    index ++;
+                } else if (kc == kl) {//right
+                    index --;
+                }
+                if (index > ws.length) {
+                    index = index % length;
+                }
+                if (index < 0) {
+                    index = length - 1;
+                }
+                updateView();
+            };
+        }
+
         </script>
     </head>
-    <body onload="updateView()">
+    <body onload="init()">
         <div id=img><img id=view src="s2/a01.svg"></img></div>
     </body>
 </html>
