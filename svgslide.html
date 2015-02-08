@@ -21,6 +21,17 @@
                 index = len - 1;
             }
         }
+        
+        function getAnswers(ch) {
+            var alphas = Array('a','b','c','d','e','f','g','h','i','j','k','l','m',
+                                'n','o','p','q','r','s','t','u','v','w','x','y','z');
+            delete alphas[alphas.indexOf(ch)];
+            alphas.sort(function() {return 0.5 - Math.random();});
+            var answers = alphas.slice(0,3);
+            answers.push(ch);
+            answers.sort(function() {return 0.5 - Math.random();});
+            return answers;
+        }
         function updateView() {
             adjustIndex();
             view.src = ws[index];
