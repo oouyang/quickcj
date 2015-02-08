@@ -6,11 +6,24 @@
         <script type="text/javascript">
         var kr = 39;
         var kl = 37;
+        var k1 = 49;
+        var k2 = 50;
+        var k3 = 51;
+        var k4 = 52;
+        var right = 0;
+        var wrong = 0;
+        var total = 0;
+        var right_percent = 0.0;
+        var percent = 0.0;
+        var chars_flag = [];
         var index = 0;
+        var ans = [];
+        var correct_ans = 0;
         var view = document.getElementById('view');
         var prev = document.getElementById('prev');
         var next = document.getElementById('next');
         var stat = document.getElementById('stat');
+        var score = document.getElementById('score');
 
         function adjustIndex() {
             var len = ws.length;
@@ -42,12 +55,21 @@
                 's':'尸[S]','t':'廿[T]','u':'山[U]','v':'女[V]','w':'田[W]','x':'難[X]',
                 'y':'卜[Y]','z':'重[Z]'
                 };
-            var ans = getAnswers(ws[index].charAt(3));
+            var ch = ws[index].charAt(3);
+            ans = getAnswers(ch);
             var ansTxt = '';
             for (var i = 0; i < ans.length; i++) {
                 ansTxt += ' ('+(i+1)+')' + chars[ans[i]] + ' ';
             }
             stat.innerHTML = ws[index] + ansTxt;
+            correct_ans = ans.indexOf(ch);
+            
+            var scoreTxt = '';
+            scoreTxt += '正確: ' + right;
+            scoreTxt += ' 錯誤: '+ wrong;
+            scoreTxt += ' 正確率:' + right_percent + '%';
+            scoreTxt += ' 完成率:' + percent + '%';
+            score.innerHTML = scoreTxt;
         }
         
         function shuffle() {
@@ -87,13 +109,54 @@
             index++;
             updateView();
         }
+        function updateScore(result) {
+            
+            if (result) {
+                right++;
+            } else {
+                wrong++;
+            }
+            total ++;
+            
+            // 2 digit after period
+            right_percent = Math.floor(10000 * right / total) / 100; 
+            
+            chars_flag[index] = 1;
+            var len = ws.length;
+            if (!((len-1) in chars_flag)) {
+                chars_flag[len - 1] = 0;
+            }
+            var char_count = 0;
+            for (var i = 0; i < len; i++) {
+                if (i in chars_flag && chars_flag[i] != 0) {
+                    char_count ++;
+                }
+            }
+            percent = Math.floor(10000 * char_count / len) / 100; 
+        } 
+        function check_ans(e) {
+            e = e || window.event;
+            var kc = e.keyCode ? e.keyCode : e.which;;
+            var user_ans = -1;
+            if (kc == k1 ||
+                kc == k2 ||
+                kc == k3 ||
+                kc == k4) {
+                user_ans = kc - k1;
+                updateScore(user_ans == correct_ans);
+                shuffle();
+            }
+        }
         </script>
     </head>
     <body onload="init()">
         <div id=img><img id=view src="s2/a01.svg"></img></div>
         <table>
             <tr>
-                <td span=3><div id=stat></div><input value="" /></td>
+                <td colspan=3><div id=stat></div><input value="" id=input onkeypress="check_ans()" /></td>
+            </tr>
+            <tr>
+                <td colspan=3><div id=score></div></td>
             </tr>
             <tr>
                 <td><div id=prev><input type="button" value="prev" onclick="prevView()" /></div></td>
