@@ -206,8 +206,8 @@
                 kc == k3 ||
                 kc == k4) {
                 user_ans = kc - k1;
-            } else if (ans_ch in answers) {
-                user_ans = answers.indexOf(ans_ch);
+            } else if (ans_ch in ans) {
+                user_ans = ans.indexOf(ans_ch);
             }
             if (user_ans != -1) {
                 updateScore(user_ans);
