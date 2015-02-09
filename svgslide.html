@@ -199,15 +199,13 @@
         function check_ans(e) {
             e = e || window.event;
             var kc = e.keyCode ? e.keyCode : e.which;;
-            var user_ans = -1;
             var ans_ch = String.toLowerCase(String.fromCharCode(kc));
-            if (kc == k1 ||
+            var user_ans = ans.indexOf(ans_ch);
+            if (user_ans == -1 && (kc == k1 ||
                 kc == k2 ||
                 kc == k3 ||
-                kc == k4) {
+                kc == k4)) {
                 user_ans = kc - k1;
-            } else if (ans_ch in ans) {
-                user_ans = ans.indexOf(ans_ch);
             }
             if (user_ans != -1) {
                 updateScore(user_ans);
