@@ -331,7 +331,7 @@ var Data = {
 			if (a == 'O' && b == 'O2') return false;
 			return a != b;
 		}
-	}
+	},
 	
 	pink : { 
 		color : 'pink',
@@ -575,6 +575,22 @@ var Data = {
 			end : [1225, 1565],
 			},
 			]
-	}
-
+	};
 };
+
+function ip(x1, y1, x2, y2, x3, y3, x4, y4) {
+	x12=x1-x2;
+	x13=x1-x3;
+	x34=x3-x4;
+	y12=y1-y2;
+	y13=y1-y3;
+	y34=y3-y4;
+	y = (y1 * x12 * y34 - y3 * y12 * x34 - y12 * y34 * x13 ) 
+		/ ( x12 * y34 - y12 * x34 );
+	x = (x1 * y12 * x34 - x3 * x12 * y34 - x12 * x34 * y13 ) 
+		/ ( y12 * x34 - x12 * y34 );
+}
+
+
+
+
