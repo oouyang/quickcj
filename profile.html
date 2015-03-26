@@ -5,7 +5,18 @@
     License, v. 2.0. If a copy of the MPL was not distributed with this file,
     You can obtain one at http://mozilla.org/MPL/2.0/.
   -->
-
+<!--
+mcts_tests = { 
+  'webapi': [
+    {'id':'apps', 'checked': True, 'hidden': False}, 
+    {'bluetooth', 'checked': True, 'hidden': False}], 
+  'cert': [
+    {'id':'omni-analyzer'}, 
+    {'id':'webapi'}], 
+  'web-platform-tests' : [ 
+    {'id':'IndexedDB'}, 
+    {'id':'dom'}] };
+-->
 <html>
   <head>
     <meta charset="utf-8" />
@@ -25,6 +36,17 @@
     <!--link rel="stylesheet" href="/look.css" />
     <script src="app.js" ></script-->
       <script type="text/javascript">
+      mcts_tests = { 
+        'webapi': [
+          {'id':'apps', 'checked': True, 'hidden': False}, 
+          {'bluetooth', 'checked': True, 'hidden': False}], 
+        'cert': [
+          {'id':'omni-analyzer', 'checked': True, 'hidden': False}, 
+          {'id':'webapi', 'checked': True, 'hidden': False}], 
+        'web-platform-tests' : [ 
+          {'id':'IndexedDB', 'checked': True, 'hidden': False}, 
+          {'id':'dom', 'checked': True, 'hidden': False}] 
+      };
 
         /*
         function Client(addr) {
@@ -240,6 +262,6 @@
             <button id="cancel" onclick='windows.close();'>Cancel</button>
           </div>
       </div>
-      <div class="contents"></div>
+      <div id="contents"></div>
   </body>
 </html>
