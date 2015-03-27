@@ -22,7 +22,7 @@
   overflow: hidden;
 }
 </style>
-
+<script type="text/javascript" src="lz-string.min.js"></script>
       <script type="text/javascript">
       var mcts_tests = { 
         'webapi': [
@@ -35,7 +35,42 @@
           {'id':'IndexedDB', 'checked': true, 'hidden': false}, 
           {'id':'dom', 'checked': true, 'hidden': false}] 
       };
-
+      
+      function appendCheckBox(el, idx, data) {
+        var idiv = document.createElement('div');
+        idiv.id = 'cb'+idx;
+        el.appendChild(idiv);
+        
+        var cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.name = data.id;
+        cb.checked = data.checked;
+        cb.value = data.id;
+        if (data.hidden) {
+          idiv.setAttribute('style', 'display: none;');
+        }
+        
+        idiv.appendChild(cb);
+        idiv.appendChild(document.createTextNode(data.id));
+      }
+      
+      function resetTest(dc, tests) {
+        var h2 = document.createElement('h2');
+        h2.appendChild(document.createTextNode('Tests'));
+        dc.appendChild(h2);
+        for (var key in tests) {
+          var mg = document.createElement('p');
+          var h3 = document.createElement('h3');
+          h3.appendChild(document.createTextNode(key));
+          mg.id = 'mcts_'+key;
+          mg.appendChild(h3);
+          for (var j = 0; j < tests[key].length; j++) {
+            appendCheckBox(mg, j, tests[key][j]);
+          }
+          dc.appendChild(mg);
+        }
+      }
+       
         /*
         function Client(addr) {
           this.addr = addr;
