@@ -540,4 +540,6 @@ function init() {
 	$('#station2').change(counting);
 
 	$('#map').val('SONGSHAN').change();
+	$('#station').value('R13').change();
+	$('#station2').value('R06').change();
 }
