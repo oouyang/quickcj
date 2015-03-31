@@ -531,8 +531,8 @@ function mycounting() {
 	var cnt = 0;
 	/*for (var s in res) */{
 	    var s = $('#station2').val();
-		if (s == s1) continue;
-		if (res[s].dis >= Infinity) continue;
+		if (s == s1) return;
+		if (res[s].dis >= Infinity) return;
 
 		var r = res[s];
 
