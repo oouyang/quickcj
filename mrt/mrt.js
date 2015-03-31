@@ -540,8 +540,8 @@ function mycounting() {
 
 		html += '<tr>';
 		html += '<td class="x l_' + r.line + '"></td>';
-		html += '<th class="s" s="' + s + '">' + slist[s] + '</th>';
-		html += '<td class="price">' + r.price + '</td><td>';
+		//html += '<th class="s" s="' + s + '">' + slist[s] + '</th>';
+		html += '<td class="price">' + r.price + '/' + (r.price * 0.8) + '</td><td>';
 		html += routeToHTML(r, s);
 
 		for (var rt in more) {
