@@ -561,22 +561,24 @@ function init() {
 	for (var m in Data) {
 		$('#map').append('<option value=' + m + '>' + Data[m].text + '</option>')
 	}
-	$('#map').change(function() {
-		setMapData($(this).val());
-		counting();
-	});
-
 	for (var s in slist) {
 		$('#station').append('<option value=' + s + '>' + slist[s] + '</option>')
 		$('#station2').append('<option value=' + s + '>' + slist[s] + '</option>')
 	}
-	$('#station').change(counting);
-	$('#station2').change(counting);
 
 	$('#map').val('SONGSHAN').change();
-
 	$('#station').value('R13').change();
 	$('#station2').value('R06').change();
+	
+	mycounting();
+
+	// $('#map').change(function() {
+	// 	setMapData($(this).val());
+	// 	counting();
+	// });
+
+	// $('#station').change(counting);
+	// $('#station2').change(counting);
 
 	// $('.s').live('click', function() {
 	// 	var s1 = $('#station').attr('s');
