@@ -473,7 +473,6 @@ function findAllRoutes(start, goal, maxDis, maxTransfer) {
 
 function routeToHTML(info, s) {
 	return '<div class="route">'
-//			+ '<span class="dis">' + info.dis + 'm</span>'
 			+ '<span class="dis">' + (Math.ceil(info.dis/10) / 100) + 'km</span>'
 			+ info.route + '<span class="s" s="' + s + '">' + slist[s] + '</span></div>';
 }
@@ -519,43 +518,31 @@ function counting() {
 
 function mycounting() {
 	var s1 = $('#station').val();
-	//var s2 = $('#station_2').val();
-
-	//console.log(s1, s2);
-	//$('#res').text(getDis(s1, s2));
-
 	var res = shortestDis(s1, false);
-	//var res2 = shortestDis(s1, true);
-
 	var html = '<table class="list">';
 	var cnt = 0;
-	/*for (var s in res) */{
-	    var s = $('#station2').val();
-		if (s == s1) return;
-		if (res[s].dis >= Infinity) return;
+    var s = $('#station2').val();
+	if (s == s1) return;
+	if (res[s].dis >= Infinity) return;
 
-		var r = res[s];
+	var r = res[s];
 
-		var more = r.transCount > 1 ? findAllRoutes(s1, s, r.dis + MaxDistance, r.transCount - 1) : [];
+	var more = r.transCount > 1 ? findAllRoutes(s1, s, r.dis + MaxDistance, r.transCount - 1) : [];
 
-		html += '<tr>';
-		html += '<td class="x l_' + r.line + '"></td>';
-		//html += '<th class="s" s="' + s + '">' + slist[s] + '</th>';
-		html += '<td class="price">' + r.price + '/' + (r.price * 0.8) + '</td><td>';
-		html += routeToHTML(r, s);
+	html += '<tr>';
+	html += '<td class="price">' + r.price + '/' + (r.price * 0.8) + '</td><td>';
+	html += routeToHTML(r, s);
 
-		for (var rt in more) {
-			if (more[rt].dis != r.dis) html += routeToHTML(more[rt], s);
-		}
-		html += '</td></tr>';
-		cnt++;
+	for (var rt in more) {
+		if (more[rt].dis != r.dis) html += routeToHTML(more[rt], s);
 	}
+	html += '</td></tr>';
+	cnt++;
+
 	html += '</table>';
 
 	$('#res').html(cnt > 0 ? html : '<h2>此站尚未通車</h2>');
-
 }
-
 
 function init() {
 	for (var m in Data) {
