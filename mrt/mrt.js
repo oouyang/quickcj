@@ -567,17 +567,11 @@ function init() {
 	}
 
 	$('#map').val('SONGSHAN').change();
-	// $('#station').value('R13').change();
-	// $('#station2').value('R06').change();
-	
 
 	// $('#map').change(function() {
 	// 	setMapData($(this).val());
 	// 	counting();
 	// });
-
-	// $('#station').change(counting);
-	// $('#station2').change(counting);
 
 	// $('.s').live('click', function() {
 	// 	var s1 = $('#station').attr('s');
@@ -588,10 +582,9 @@ function init() {
 	setMapData('SONGSHAN');
 	$('#station').value('R13').change();
 	$('#station2').value('R06').change();
-	// s = document.getElementById('station');
-	// s.value = 'R13';
-	// s = document.getElementById('station2');
-	// s.value = 'R06';
+
+	$('#station').change(counting);
+	$('#station2').change(counting);
 	
 	mycounting();
 }
