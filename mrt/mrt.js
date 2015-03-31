@@ -585,11 +585,11 @@ function init() {
 	// 	var s1 = $('#station2').attr('s');
 	// 	$('#station2').val(s2).change();
 	// });
-	
-	s = document.getElementById('station')
-	s.value = 'R13'
-	s = document.getElementById('station2')
-	s.value = 'R06'
+	setMapData('SONGSHAN');
+	s = document.getElementById('station');
+	s.value = 'R13';
+	s = document.getElementById('station2');
+	s.value = 'R06';
 	
 	mycounting();
 }
