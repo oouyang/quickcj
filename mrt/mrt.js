@@ -490,7 +490,8 @@ function counting() {
 
 	var html = '<table class="list">';
 	var cnt = 0;
-	for (var s in res) {
+	/*for (var s in res) */{
+	    var s = $('#station2').val();
 		if (s == s1) continue;
 		if (res[s].dis >= Infinity) continue;
 
@@ -532,6 +533,7 @@ function init() {
 
 	for (var s in slist) {
 		$('#station').append('<option value=' + s + '>' + slist[s] + '</option>')
+		$('#station2').append('<option value=' + s + '>' + slist[s] + '</option>')
 	}
 	$('#station').change(counting);
 
