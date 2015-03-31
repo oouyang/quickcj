@@ -583,8 +583,8 @@ function init() {
 	$('#station').value('R13').change();
 	$('#station2').value('R06').change();
 
-	$('#station').change(counting);
-	$('#station2').change(counting);
+	$('#station').change(mycounting);
+	$('#station2').change(mycounting);
 	
 	mycounting();
 }
