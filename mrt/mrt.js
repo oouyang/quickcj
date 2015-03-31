@@ -521,6 +521,7 @@ function init() {
 	$('.s').live('click', function() {
 		var s = $(this).attr('s');
 		$('#station').val(s).change();
+		$('#station2').val(s).change();
 	});
 
 	for (var m in Data) {
@@ -536,6 +537,7 @@ function init() {
 		$('#station2').append('<option value=' + s + '>' + slist[s] + '</option>')
 	}
 	$('#station').change(counting);
+	$('#station2').change(counting);
 
 	$('#map').val('SONGSHAN').change();
 }
