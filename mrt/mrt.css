@@ -25,3 +25,6 @@
   .route .dis { display: block; position: absolute; top: 3px; left: 5px; width: 50px; text-align: right; font-family: Arial; color: #A84 }
   .route .s { font-weight: bold; padding: 3px 8px; background: #eee; border: 1px solid #777; border-radius: 2px; cursor: pointer }
   .route .l { display: inline-block; width: 6.8em; text-align: center; font-size: 11px; padding: 2px 5px; color: #fff; text-shadow: #222 2px 1px 3px }
+
+  .hidden { display: none; }
+
