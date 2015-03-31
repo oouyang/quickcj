@@ -586,10 +586,12 @@ function init() {
 	// 	$('#station2').val(s2).change();
 	// });
 	setMapData('SONGSHAN');
-	s = document.getElementById('station');
-	s.value = 'R13';
-	s = document.getElementById('station2');
-	s.value = 'R06';
+	$('#station').value('R13').change();
+	$('#station2').value('R06').change();
+	// s = document.getElementById('station');
+	// s.value = 'R13';
+	// s = document.getElementById('station2');
+	// s.value = 'R06';
 	
 	mycounting();
 }
