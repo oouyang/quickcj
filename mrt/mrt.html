@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<title>台北捷運票價試算</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="./mrt.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" charset="UTF-8" href="./mrt.css" />
+
+</head>
+<body onload=init()>
+<div id="navi">
+請選擇通車範圍： <select id="map"></select> - 
+請選擇出發站： <select id="station"></select><br/>
+<ul>
+<li>本頁面可以站間距離試算台北捷運轉乘方式，各站計算結果顯示在最上面的是最短距離，也就是計算票價的距離。若有更簡便的轉乘方式，會在後方另外列出。</li>
+<li>請注意本頁面在計算時並不考慮現行部分站間有人工調整過的票價。另外里程資料可能有誤差，會影響到計算結果。</li>
+<li>由於計算方式非常暴力，可能在部分環境跑起來像是當機一樣（尤其是IE），此題無解。</li>
+<li>直通運行的情形下，轉乘路線中只呈現上車站的路線名。（如台電大樓→中山只顯示新店線）</li>
+</ul>
+</div>
+
+<div id="res"></div>
+</body>
+</html>

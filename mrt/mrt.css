@@ -1,0 +1,27 @@
+  #navi { background: #ffe; padding: 4px; font-size: 15px; margin-bottom: 10px }
+
+  .l_R { background: #D12D33 }
+  .l_R1 { background: #F18D93 }
+  .l_G { background: #007C59 }
+  .l_BL { background: #0072C6 }
+  .l_BR { background: #AA753F }
+  .l_O { background: #FCA311 }
+  .l_O1 { background: #FCA311 }
+  .l_O2 { background: #FCA311 }
+  .l_O3 { background: #FCA311 }
+  .l_Y { background: #F7DB17 }
+  .l_G1 { background: #80DC49 }
+  .l_G2 { background: #80DC49 }
+  .l_X { background: #999999 }
+  
+  .list { border-collapse: collapse; width: 100% }
+  .list tr { border-bottom: 1px solid #999 }
+  .list th { text-align: center; font: bold 19px/1 'Microsoft Jhenghei'; width: 6.6em; text-shadow: #fff 2px 2px 5px; cursor: pointer }
+  .list .x { width: 10px }
+  .list .price { width: 60px; color: red; font: bold 26px/1 Arial }
+
+  
+  .route { font-size: 13px; margin: 6px 0; position: relative; padding-left: 60px }
+  .route .dis { display: block; position: absolute; top: 3px; left: 5px; width: 50px; text-align: right; font-family: Arial; color: #A84 }
+  .route .s { font-weight: bold; padding: 3px 8px; background: #eee; border: 1px solid #777; border-radius: 2px; cursor: pointer }
+  .route .l { display: inline-block; width: 6.8em; text-align: center; font-size: 11px; padding: 2px 5px; color: #fff; text-shadow: #222 2px 1px 3px }
