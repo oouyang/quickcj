@@ -1,9 +1,12 @@
-var Infinity = 0xffffffff;
+//var Infinity = 0xffffffff;
 //var LazyFactor = 0x00ffffff;
 var MaxTransfer = 3;
 var MaxDistance = 20000;
 
+var llist = null;
+var dlist = null;
 var isTransfer = null;
+var disToPrice = null;
 
 var slist = {
 	R33: '淡水', R32: '紅樹林', R31: '竹圍', R30: '關渡', R29: '忠義', R28: '復興崗', R26: '北投', R25: '奇岩', R24: '唭哩岸',
@@ -369,7 +372,6 @@ function disToPriceDefault(route) {
 	if (dis <= 23000) return 25 + Math.floor((dis-5000) / 3000) * 5;
 	return 55 + Math.floor((dis-23000) / 4000) * 5;
 }
-
 
 function setMapData(mapDataKey) {
 	llist = Data[mapDataKey].llist;
