@@ -546,7 +546,25 @@ function mycounting() {
 	$('#res').html(cnt > 0 ? html : '<h2>此站尚未通車</h2>');
 }
 function getRouteClass(s) {
-	return 'l_'+s.substring(0, s.length-2)
+	var n = s.length;
+	var c;
+	if (s == 'G1A') {
+		c = 'G';
+	}else
+	if (n == 2) {
+		c = s.substring(0,1);
+		if (c == 'B') {
+			c = 'BR';
+		}
+	} else {
+		var e = s.substring(n-2,n-1);
+		if (e == 'A') {
+			c = s.substring(0,n-3);
+		} else {
+			c = s.substring(0,n-2);
+		}
+	}
+	return 'l_'+c;
 }
 function init() {
 	for (var m in Data) {
