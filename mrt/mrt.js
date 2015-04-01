@@ -550,13 +550,10 @@ function getRouteClass(s) {
 	var c;
 	if (s == 'R18A') {
 		c = 'R';
-	} else if (s == 'G1A') {
+	} else if (s == 'G18A' || s == 'G1A') {
 		c = 'G';
 	} else if (n == 2) {
 		c = s.substring(0,1);
-		if (c == 'B') {
-			c = 'BR';
-		}
 	} else {
 		var st = s.substring(0,2);
 		if (st == "BL" || st == 'BR') {
@@ -564,6 +561,9 @@ function getRouteClass(s) {
 		} else {
 			c = s.substring(0,n-2);
 		}
+	}
+	if (c == 'B') {
+		c = 'BR';
 	}
 	return 'l_'+c;
 }
