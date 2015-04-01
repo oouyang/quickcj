@@ -545,32 +545,21 @@ function mycounting() {
 
 	$('#res').html(cnt > 0 ? html : '<h2>此站尚未通車</h2>');
 }
-
+function getRouteClass(s) {
+	return 'l_'+s.substring(0, s.length-2)
+}
 function init() {
 	for (var m in Data) {
 		$('#map').append('<option value=' + m + '>' + Data[m].text + '</option>')
 	}
 	for (var s in slist) {
-		$('#station').append('<option value=' + s + '>' + slist[s] + '</option>')
-		$('#station2').append('<option value=' + s + '>' + slist[s] + '</option>')
+		$('#station').append('<option value=' + s + ' class=' + getRouteClass(s) + '>' + slist[s] + '</option>')
+		$('#station2').append('<option value=' + s + ' class=' + getRouteClass(s) + '>' + slist[s] + '</option>')
 	}
 
 	$('#map').val('SONGSHAN').change();
 
-	// $('#map').change(function() {
-	// 	setMapData($(this).val());
-	// 	counting();
-	// });
-
-	// $('.s').live('click', function() {
-	// 	var s1 = $('#station').attr('s');
-	// 	$('#station').val(s1).change();
-	// 	var s1 = $('#station2').attr('s');
-	// 	$('#station2').val(s2).change();
-	// });
 	setMapData('SONGSHAN');
-	// $('#station').value('R13').change();
-	// $('#station2').value('R06').change();
 	s = document.getElementById('station');
 	s.value = 'R13';
 	s = document.getElementById('station2');
