@@ -1,4 +1,4 @@
-  #navi { background: #ffe; padding: 4px; font-size: 15px; margin-bottom: 10px }
+  #navi { background: seashell; padding: 4px; font-size: 15px; margin-bottom: 10px }
 
   .l_R { background: red }
   .l_R1 { background: pink }
@@ -13,20 +13,7 @@
   .l_G1 { background: green }
   .l_G2 { background: green }
   .l_X { background: #999999 }
-  /*.l_R { background: #D12D33 }*/
-  /*.l_R1 { background: #F18D93 }*/
-  /*.l_G { background: #007C59 }*/
-  /*.l_BL { background: #0072C6 }*/
-  /*.l_BR { background: #AA753F }*/
-  /*.l_O { background: #FCA311 }*/
-  /*.l_O1 { background: #FCA311 }*/
-  /*.l_O2 { background: #FCA311 }*/
-  /*.l_O3 { background: #FCA311 }*/
-  /*.l_Y { background: #F7DB17 }*/
-  /*.l_G1 { background: #80DC49 }*/
-  /*.l_G2 { background: #80DC49 }*/
-  /*.l_X { background: #999999 }*/
-  
+
   .list { border-collapse: collapse; width: 100% }
   .list tr { border-bottom: 1px solid #999 }
   .list th { text-align: center; font: bold 19px/1 'Microsoft Jhenghei'; width: 6.6em; text-shadow: #fff 2px 2px 5px; cursor: pointer }
