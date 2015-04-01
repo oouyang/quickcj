@@ -548,18 +548,21 @@ function mycounting() {
 function getRouteClass(s) {
 	var n = s.length;
 	var c;
-	if (s == 'G1A') {
+<option class="l_B" value="BL9"></option>
+<option class="l_R1" value="R18A"></option>
+	if (s = 'R18A') {
+		c = 'R';
+	} else if (s == 'G1A') {
 		c = 'G';
-	}else
-	if (n == 2) {
+	}else if (n == 2) {
 		c = s.substring(0,1);
 		if (c == 'B') {
 			c = 'BR';
 		}
 	} else {
-		var e = s.substring(n-2,n-1);
-		if (e == 'A') {
-			c = s.substring(0,n-3);
+		var st = s.substring(0,2);
+		if (st == "BL" || st == 'BR') {
+			c = st;
 		} else {
 			c = s.substring(0,n-2);
 		}
