@@ -548,8 +548,6 @@ function mycounting() {
 function getRouteClass(s) {
 	var n = s.length;
 	var c;
-<option class="l_B" value="BL9"></option>
-<option class="l_R1" value="R18A"></option>
 	if (s = 'R18A') {
 		c = 'R';
 	} else if (s == 'G1A') {
