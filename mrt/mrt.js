@@ -590,4 +590,4 @@ function init() {
 	mycounting();
 }
 
-document.onload = init;
+window.onload = init;
