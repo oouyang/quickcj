@@ -1,0 +1,13 @@
+{
+  "name": "Easy MRT",
+  "description": "MRT price and transfer information",
+  "launch_path": "/mrt.html",
+  "icons": {
+    "128": "/m128x128.png"
+  },
+  "developer": {
+    "name": "Owen Ouyang",
+    "url": "http://ppt.cc/NdTa"
+  },
+  "default_locale": "en"
+}
