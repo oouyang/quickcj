@@ -548,11 +548,11 @@ function mycounting() {
 function getRouteClass(s) {
 	var n = s.length;
 	var c;
-	if (s = 'R18A') {
+	if (s == 'R18A') {
 		c = 'R';
 	} else if (s == 'G1A') {
 		c = 'G';
-	}else if (n == 2) {
+	} else if (n == 2) {
 		c = s.substring(0,1);
 		if (c == 'B') {
 			c = 'BR';
